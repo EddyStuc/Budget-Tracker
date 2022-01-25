@@ -59,6 +59,6 @@ class User extends Authenticatable
      */
     public function expenses()
     {
-        return $this->hasManyThrough(Expense::class, Budget::class);
+        return $this->hasMany(Expense::class);
     }
 }

@@ -9,6 +9,8 @@ class Expense extends Model
 {
     use HasFactory;
 
+    protected $with = ['category', 'creator'];
+
     /**
      * Relationship to the budget an expense is in
      *
