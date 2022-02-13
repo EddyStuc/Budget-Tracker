@@ -4,9 +4,9 @@ use App\Http\Controllers\BudgetController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Route::get('budget', [BudgetController::class, 'index'])->name('budget');
+Route::get('budget', [BudgetController::class, 'index'])->middleware('auth')->name('budget');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

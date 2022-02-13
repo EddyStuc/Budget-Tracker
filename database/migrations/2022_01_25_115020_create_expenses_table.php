@@ -16,7 +16,7 @@ class CreateExpensesTable extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('cost');
+            $table->decimal('cost', 10, 2);
             $table->foreignId('category_id')->constrained();
             $table->foreignId('budget_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
